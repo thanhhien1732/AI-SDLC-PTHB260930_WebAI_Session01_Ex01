@@ -33,3 +33,96 @@ body {
     margin: 0 auto;
     width: 100%;
 }
+
+/* Đầu trang */
+.header {
+    background-color: var(--color-bg-header);
+    padding: 1rem 1.5rem;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-white);
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+}
+
+.nav-link {
+    font-size: 1rem;
+    color: var(--color-white);
+    text-decoration: none;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+/* Giới thiệu */
+.intro {
+    background-color: var(--color-bg-intro);
+    padding: 4rem 1.5rem;
+}
+
+.intro-title {
+    font-size: 2.5rem;
+    color: var(--color-heading);
+    margin-bottom: 0.75rem;
+}
+
+.intro-desc {
+    font-size: 1.125rem;
+}
+
+/* Giá trị */
+.values {
+    padding: 3rem 1.5rem;
+}
+
+.values-title {
+    font-size: 1.75rem;
+    color: var(--color-heading);
+    margin-bottom: 1.5rem;
+}
+
+.values-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.values-item-name {
+    font-size: 1.125rem;
+    color: var(--color-accent);
+    margin-bottom: 0.25rem;
+}
+
+.values-item-desc {
+    font-size: 1rem;
+}
+
+/* Chân trang */
+.footer {
+    background-color: var(--color-bg-footer);
+    color: var(--color-white);
+    font-size: 0.875rem;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.footer-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
