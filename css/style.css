@@ -26,6 +26,13 @@ body {
     color: var(--color-text);
     background-color: var(--color-bg-page);
     margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
 }
 
 .container {
@@ -66,6 +73,34 @@ body {
 
 .menu-toggle {
     display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3125rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+}
+
+.menu-bar {
+    display: block;
+    width: 1.5rem;
+    height: 0.1875rem;
+    background-color: var(--color-white);
+}
+
+.nav-link:hover,
+.menu-toggle:hover {
+    opacity: 0.8;
+}
+
+.nav-link:focus-visible,
+.menu-toggle:focus-visible {
+    outline: 2px solid var(--color-white);
+    outline-offset: 0.25rem;
 }
 
 /* Giới thiệu */
@@ -76,6 +111,7 @@ body {
 
 .intro-title {
     font-size: 2.5rem;
+    font-weight: 700;
     color: var(--color-heading);
     margin-bottom: 0.75rem;
 }
@@ -91,6 +127,7 @@ body {
 
 .values-title {
     font-size: 1.75rem;
+    font-weight: 700;
     color: var(--color-heading);
     margin-bottom: 1.5rem;
 }
@@ -102,14 +139,18 @@ body {
     gap: 1.5rem;
 }
 
-.values-item-name {
+.values-item-name,
+.value-item-name {
     font-size: 1.125rem;
+    font-weight: 700;
     color: var(--color-accent);
     margin-bottom: 0.25rem;
 }
 
-.values-item-desc {
+.values-item-desc,
+.value-item-desc {
     font-size: 1rem;
+    color: var(--color-text);
 }
 
 /* Chân trang */
@@ -125,4 +166,58 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
+}
+
+/* Màn hình nhỏ hơn 768px (khung nhìn 360px) */
+@media (max-width: 767px) {
+    .header {
+        height: 4rem;
+        padding: 0 1.5rem;
+        position: relative;
+    }
+
+    .header-inner {
+        height: 100%;
+        justify-content: space-between;
+        gap: 0;
+    }
+
+    .menu-toggle {
+        display: flex;
+        user-select: none;
+    }
+
+    /* Ẩn menu */
+    .nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--color-bg-header);
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 100;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        gap: 0;
+        padding: 0.5rem 0;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .nav-link:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Click vào nút menu sẽ hiện */
+    #menu-check:checked~.nav {
+        display: block;
+    }
 }
